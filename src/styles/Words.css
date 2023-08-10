@@ -1,0 +1,26 @@
+.square-card {
+    margin: 10px;
+    width: 700px;
+    height: 300px;
+}
+
+@keyframes flip {
+    from {
+        transform: perspective(4000px) rotateY(0);
+    }
+
+    to {
+        transform: perspective(4000px) rotateY(180deg);
+    }
+}
+
+.welcome-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.blue-text {
+    color: red;
+    font-size: 3rem
+}
