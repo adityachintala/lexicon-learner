@@ -12,7 +12,8 @@ const AddWord = () => {
     const [isSaving, setIsSaving] = useState(false);
 
     useEffect(() => {
-        const storedWords = localStorage.getItem('savedWords');
+        const storedWords =
+            localStorage.getItem('savedWords');
         if (storedWords) {
             setSavedWords(JSON.parse(storedWords));
         }
@@ -100,48 +101,51 @@ const AddWord = () => {
 
 
     return (
-        <div className="container">
-            <h1 className="text-center mt-5">Add a Word</h1>
-            <form onSubmit={handleFormSubmit} className="mt-5">
-                <div className="mb-3">
-                    <label htmlFor="wordInput" className="form-label">Enter a word:</label>
-                    <input
-                        type="text"
-                        className="form-control"
-                        id="wordInput"
-                        value={word}
-                        onChange={(e) => setWord(e.target.value)}
-                    />
-                </div>
-                <div>
-                    <button type="submit" className="btn btn-primary">Fetch Word Data</button>
-                    {isLoading && <span> Loading...</span>}
-                </div>
-            </form>
-            {wordData.length > 0 && (
-                <div>
-                    <br />
-                    {wordData.map((meaning, index) => (
-                        <div key={index}>
-                            <strong>{meaning.partOfSpeech}:</strong> {meaning.definition}<br />
-                            {meaning.example && <span>Example: {meaning.example}</span>}
-                            <hr />
-                        </div>
-                    ))}
-                    <div>
-                        <button onClick={handleSave} className="btn btn-primary">Save</button>
-                        {isSaving && <span> Saving...</span>}
+        <div className="container-fluid">
+            <div className='add-word-div'>
+
+                <h1 className="text-center">Add a Word</h1>
+                <form onSubmit={handleFormSubmit} className="mt-5">
+                    <div className="mb-3">
+                        <label htmlFor="wordInput" className="form-label"><h3>Enter a Word:</h3></label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            id="wordInput"
+                            value={word}
+                            onChange={(e) => setWord(e.target.value)}
+                        />
                     </div>
-                    <br />
-                    <button onClick={handleSearchNewWord} className="btn btn-primary">Search New Word</button>
-                </div>
-            )}
-            {!isWordAvailable && (
-                <div className="notification">Word not available!</div>
-            )}
-            {showNotification && (
-                <div className="notification">Word saved successfully!</div>
-            )}
+                    <div>
+                        <button type="submit" className="btn btn-primary">Fetch Word Data</button>
+                        {isLoading && <span> Loading...</span>}
+                    </div>
+                </form>
+                {wordData.length > 0 && (
+                    <div>
+                        <br />
+                        {wordData.map((meaning, index) => (
+                            <div key={index}>
+                                <strong>{meaning.partOfSpeech}:</strong> {meaning.definition}<br />
+                                {meaning.example && <span>Example: {meaning.example}</span>}
+                                <hr />
+                            </div>
+                        ))}
+                        <div>
+                            <button onClick={handleSave} className="btn btn-primary">Save</button>
+                            {isSaving && <span> Saving...</span>}
+                        </div>
+                        <br />
+                        <button onClick={handleSearchNewWord} className="btn btn-primary">Search New Word</button>
+                    </div>
+                )}
+                {!isWordAvailable && (
+                    <div className="notification">Word not available!</div>
+                )}
+                {showNotification && (
+                    <div className="notification">Word saved successfully!</div>
+                )}
+            </div>
         </div>
     );
 };

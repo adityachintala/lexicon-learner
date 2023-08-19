@@ -18,7 +18,7 @@ const InitWords = () => {
     useEffect(() => {
         const fetchInitialWords = async () => {
             try {
-                const response = await axios.get("https://z6o1ltqubi.execute-api.eu-north-1.amazonaws.com/default/api/getinitwords");
+                const response = await axios.get("https://oaysataj96.execute-api.ap-south-1.amazonaws.com/default/getFromDBInitWordsLL");
                 setInitialWords(response.data.body);
             } catch (error) {
                 console.error('Error fetching initial words:', error);

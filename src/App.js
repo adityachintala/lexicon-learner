@@ -9,10 +9,11 @@ import Test from './components/Test';
 import InitWords from './components/InitWords';
 import UserWords from './components/UserWords';
 import "bootstrap/dist/css/bootstrap.min.css";
+import './App.css';
 
-const PrivateRoute = ({ children, authed }) => {
-	return authed ? children : <Navigate to={"/"} />;
-};
+// const PrivateRoute = ({ children, authed }) => {
+// 	return authed ? children : <Navigate to={"/"} />;
+// };
 
 const App = () => {
 	// const [authed, setAuthed] = useState(false);
@@ -31,7 +32,6 @@ const App = () => {
 		// 		</Routes>
 		// 	</Router>
 		// </GoogleOAuthProvider>
-
 
 		<Router>
 			<Navbar />
