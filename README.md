@@ -1,4 +1,4 @@
-# Project Description: Lexicon Learner : [Open 🔗](https://main.dudfvk2vcbvbo.amplifyapp.com/)
+# Project Description: Lexicon Learner : [Open 🔗](https://main.dj3ad3xs0hnon.amplifyapp.com/)
 
 Lexicon Learner is a web application designed to help users expand their vocabulary 
 by providing a platform for learning and testing their knowledge of words. The 
